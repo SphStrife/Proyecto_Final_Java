@@ -1,11 +1,19 @@
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import logica.AgendaMedica;
+import modelo.Paciente;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class Main {
-    private static final Logger logger = LogManager.getLogger(Main.class);
-
     public static void main(String[] args) {
-        logger.info("¡Hola mundo desde Log4J2!");
-        logger.error("Esto es un error de prueba.");
+        AgendaMedica agenda = new AgendaMedica();
+
+        Paciente paciente1 = new Paciente("001", "Ana García", LocalDate.of(1990, 5, 15));
+        Paciente paciente2 = new Paciente("002", "Carlos Pérez", LocalDate.of(1985, 11, 23));
+
+        agenda.agregarCita(paciente1, LocalDate.of(2025, 6, 3), LocalTime.of(9, 30));
+        agenda.agregarCita(paciente2, LocalDate.of(2025, 6, 3), LocalTime.of(10, 15));
+
+        agenda.mostrarTodasLasCitas();
     }
 }

@@ -1,3 +1,5 @@
+package modelo;
+
 import facebook4j.Facebook;
 import facebook4j.FacebookFactory;
 import facebook4j.PostUpdate;
